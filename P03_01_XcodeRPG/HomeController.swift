@@ -15,5 +15,6 @@ class HomeController : UIViewController {
     @IBAction func playButton() {
     }
     
+    @IBOutlet weak var wallpaper: UIImageView!
     
 }

@@ -19,17 +19,30 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="43Q-4J-kCt" userLabel="mainView">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="wizzard" translatesAutoresizingMaskIntoConstraints="NO" id="adp-q9-ba5">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                        <color key="backgroundColor" red="0.66422420739999999" green="0.66424006219999998" blue="0.66423153879999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </imageView>
+                                </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="adp-q9-ba5" secondAttribute="trailing" id="XfB-Ci-XQv"/>
+                                    <constraint firstItem="adp-q9-ba5" firstAttribute="top" secondItem="43Q-4J-kCt" secondAttribute="top" id="dic-a4-qfp"/>
+                                    <constraint firstItem="adp-q9-ba5" firstAttribute="leading" secondItem="43Q-4J-kCt" secondAttribute="leading" id="mGc-Yy-4Aa"/>
+                                    <constraint firstAttribute="bottom" secondItem="adp-q9-ba5" secondAttribute="bottom" id="nIU-3J-1J9"/>
+                                </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Aj-BS-npK" userLabel="Play">
                                 <rect key="frame" x="164" y="318" width="46" height="30"/>
-                                <color key="backgroundColor" red="0.62252897019999998" green="0.72589653730000003" blue="0.4320117235" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.92277997730000005" green="0.28558063509999998" blue="0.012426368889999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="foQ-xv-P9D"/>
                                     <constraint firstAttribute="width" constant="250" id="nFa-lF-fTm"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="25"/>
                                 <state key="normal" title="PLAY">
-                                    <color key="titleColor" systemColor="systemBlueColor"/>
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
                                     <action selector="playButton" destination="BYZ-38-t0r" eventType="touchUpInside" id="bgd-Lq-yed"/>
@@ -49,6 +62,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="mcC-wV-vkG"/>
+                    <connections>
+                        <outlet property="wallpaper" destination="adp-q9-ba5" id="Dse-FD-8dh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -86,58 +102,48 @@
                                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         </collectionViewFlowLayout>
                                         <cells>
-                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="cOw-d2-Ma9" customClass="CollectionViewCell" customModule="P03_01_XcodeRPG" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="125.5" height="107"/>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" reuseIdentifier="cell" id="cOw-d2-Ma9" customClass="CollectionViewCell" customModule="P03_01_XcodeRPG" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Nme-mU-w9e">
-                                                    <rect key="frame" x="0.0" y="0.0" width="125.5" height="107"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1pJ-Yw-2Dg" userLabel="championPhoto">
-                                                            <rect key="frame" x="4" y="4" width="49.5" height="34.5"/>
+                                                            <rect key="frame" x="4" y="4" width="93.5" height="93.5"/>
                                                         </imageView>
-                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eMh-Iy-dfX" userLabel="selectChampionButton">
-                                                            <rect key="frame" x="75.5" y="4" width="46" height="30"/>
-                                                            <state key="normal" title="Button"/>
-                                                            <connections>
-                                                                <action selector="selectedChamp:" destination="cOw-d2-Ma9" eventType="touchUpInside" id="Wg4-Be-bCO"/>
-                                                            </connections>
-                                                        </button>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eo0-Q7-X4R" userLabel="championStats">
-                                                            <rect key="frame" x="4" y="81.5" width="41.5" height="20.5"/>
+                                                            <rect key="frame" x="4" y="102.5" width="41.5" height="20.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z94-yC-cDu" userLabel="championTitle">
-                                                            <rect key="frame" x="42" y="42" width="41.5" height="21"/>
+                                                            <rect key="frame" x="76" y="54" width="41.5" height="21"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
                                                     <constraints>
-                                                        <constraint firstItem="z94-yC-cDu" firstAttribute="top" secondItem="eMh-Iy-dfX" secondAttribute="bottom" constant="8" id="GFs-Ko-9jh"/>
                                                         <constraint firstItem="1pJ-Yw-2Dg" firstAttribute="top" secondItem="Nme-mU-w9e" secondAttribute="top" constant="4" id="HEJ-dF-nHF"/>
                                                         <constraint firstAttribute="bottom" secondItem="Eo0-Q7-X4R" secondAttribute="bottom" constant="5" id="Q80-KJ-zjI"/>
-                                                        <constraint firstItem="z94-yC-cDu" firstAttribute="centerX" secondItem="Nme-mU-w9e" secondAttribute="centerX" id="TW4-Ij-r7s"/>
-                                                        <constraint firstItem="z94-yC-cDu" firstAttribute="top" secondItem="1pJ-Yw-2Dg" secondAttribute="bottom" constant="3.5" id="bEM-9M-yls"/>
-                                                        <constraint firstItem="z94-yC-cDu" firstAttribute="leading" secondItem="Nme-mU-w9e" secondAttribute="leading" constant="42" id="bio-kG-7RU"/>
-                                                        <constraint firstAttribute="trailing" secondItem="eMh-Iy-dfX" secondAttribute="trailing" constant="4" id="boc-j5-lL5"/>
+                                                        <constraint firstItem="z94-yC-cDu" firstAttribute="trailing" secondItem="1pJ-Yw-2Dg" secondAttribute="trailing" constant="20" id="ZCn-9r-vch"/>
                                                         <constraint firstItem="1pJ-Yw-2Dg" firstAttribute="leading" secondItem="Nme-mU-w9e" secondAttribute="leading" constant="4" id="chM-Ea-jqe"/>
-                                                        <constraint firstItem="eMh-Iy-dfX" firstAttribute="leading" secondItem="1pJ-Yw-2Dg" secondAttribute="trailing" constant="22" id="jAG-bE-Xkh"/>
-                                                        <constraint firstItem="1pJ-Yw-2Dg" firstAttribute="top" secondItem="eMh-Iy-dfX" secondAttribute="top" id="jFi-8X-1qk"/>
+                                                        <constraint firstAttribute="trailing" secondItem="z94-yC-cDu" secondAttribute="trailing" constant="10.5" id="l1L-cr-5Xe"/>
                                                         <constraint firstItem="1pJ-Yw-2Dg" firstAttribute="leading" secondItem="Eo0-Q7-X4R" secondAttribute="leading" id="lik-cW-Y9D"/>
-                                                        <constraint firstItem="Eo0-Q7-X4R" firstAttribute="top" secondItem="1pJ-Yw-2Dg" secondAttribute="bottom" constant="43" id="n8D-rY-i0X"/>
+                                                        <constraint firstItem="Eo0-Q7-X4R" firstAttribute="top" secondItem="1pJ-Yw-2Dg" secondAttribute="bottom" constant="5" id="n8D-rY-i0X"/>
+                                                        <constraint firstItem="z94-yC-cDu" firstAttribute="top" secondItem="Nme-mU-w9e" secondAttribute="top" constant="54" id="rdA-Mj-6C9"/>
+                                                        <constraint firstAttribute="bottom" secondItem="z94-yC-cDu" secondAttribute="bottom" constant="53" id="zYA-nQ-eca"/>
                                                     </constraints>
                                                 </collectionViewCellContentView>
-                                                <color key="backgroundColor" systemColor="systemPurpleColor"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <directionalEdgeInsets key="directionalLayoutMargins" top="8" leading="8" bottom="8" trailing="8"/>
+                                                <size key="customSize" width="128" height="128"/>
                                                 <connections>
                                                     <outlet property="championPhoto" destination="1pJ-Yw-2Dg" id="Sou-VL-uK8"/>
                                                     <outlet property="championStats" destination="Eo0-Q7-X4R" id="8L1-Kk-jqy"/>
                                                     <outlet property="championTitle" destination="z94-yC-cDu" id="Y4R-ks-mNs"/>
-                                                    <outlet property="selectChampion" destination="eMh-Iy-dfX" id="9sg-72-zwx"/>
                                                 </connections>
                                             </collectionViewCell>
                                         </cells>
@@ -260,20 +266,15 @@
         </scene>
     </scenes>
     <resources>
+        <image name="wizzard" width="2000" height="2000"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
-        <systemColor name="systemBlueColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
         <systemColor name="systemPinkColor">
             <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemPurpleColor">
-            <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

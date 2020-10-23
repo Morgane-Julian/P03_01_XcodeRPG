@@ -51,7 +51,6 @@ class ChampionSelectController : UIViewController, UICollectionViewDelegate, UIC
         
         let cellIndex = indexPath.item
         
-        cell.selectChampion.isHidden = true
         cell.championPhoto.image = photoChamp[cellIndex]
         cell.championStats.text = statsChamp[cellIndex]
         cell.championTitle.text = nameChamp[cellIndex]
