@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class ChampionSelectController : UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+class ChampionSelectController : UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
     @IBAction func cancelGame(segue: UIStoryboardSegue) { }
     @IBAction func GoButton() {
@@ -36,7 +36,6 @@ class ChampionSelectController : UIViewController, UICollectionViewDelegate, UIC
         CollectionChampionSelect.dataSource = self
         
     }
-
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
